@@ -54,7 +54,7 @@ public class Account {
         this.password = password;
     }
     
-    Public String getAddress() {
+    public String getAddress() {
         return address;
     }
 
