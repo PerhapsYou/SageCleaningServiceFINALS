@@ -1,5 +1,9 @@
 package Controler;
 
+import View.ClientJobRequest;
+import View.MainWorkerInterface;
+import View.UserLogin;
+
 import java.util.ArrayList;
 
 public class JavaPB {
