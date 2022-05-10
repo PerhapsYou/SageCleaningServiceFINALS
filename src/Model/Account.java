@@ -5,6 +5,7 @@ public class Account {
     private int contactNo;
     private String email;
     private String password;
+    private String address;
     private String accountType;
 
     // Constructor
@@ -51,6 +52,14 @@ public class Account {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    Public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getAccountType() {
