@@ -14,6 +14,7 @@ public class JavaPB {
     public static ArrayList<String> data = new ArrayList<String>();
     // Holds the username(0) , password(1) of the user
     public static ArrayList<String> loggedInUserDetails = new ArrayList<String>();
+    public static ArrayList<String> orderInfo = new ArrayList<String>();
     public static Boolean loggedIn = false;
     
     public static void main(String[] args) {
