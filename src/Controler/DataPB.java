@@ -23,6 +23,39 @@ public class DataPB {
         }
     }
     
+    public static void addAccount(Account newAcc){
+        PreparedStatement ps;
+        String statement = "INSERT INTO Account(account_no, contact_number, email, password, address, " +
+                "account_type) VALUES( ?, ?, ?, ?, ?, ?)";
+
+        try {
+            ps = con.prepareStatement(statement);
+            ps.setString(1,JavaPB.userInfo.get(0)); // Latest account_no + 1
+            ps.setString(2,JavaPB.userInfo.get(1));
+            ps.setString(3,JavaPB.userInfo.get(2));
+            ps.setString(4,JavaPB.userInfo.get(3));
+            ps.setString(5,JavaPB.userInfo.get(4));
+            ps.setString(6,JavaPB.userInfo.get(5));
+        }  catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    
+    public static void addCustomer(Customer customerAcc){
+        PreparedStatement ps;
+        String statement = "INSERT INTO Customer(customer_no, customer_name, account_no)" +
+                "VALUES( ?, ?, ?)";
+
+        try {
+            ps = con.prepareStatement(statement);
+            ps.setString(1,JavaPB.userInfo.get(6)); // Latest customer_no + 1
+            ps.setString(2,JavaPB.userInfo.get(7));
+            ps.setString(3,JavaPB.userInfo.get(0)); // Latest account_no + 1
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    
     public static void addJobOrder(Account newAcc){
         PreparedStatement ps;
         String statement = "INSERT INTO JOB_ORDERS(job_id, service_id, customer_id, date_of_order, scheduled_date, request_id" +
@@ -49,22 +82,6 @@ public class DataPB {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public static void addCustomer(Customer customerAcc){
-        PreparedStatement ps;
-        String statement = "INSERT INTO Customer(customer_no, customer_name, account_no)" +
-                "VALUES( ?, ?, ?)";
-
-        try {
-            ps = con.prepareStatement(statement);
-            ps.setString(1,JavaPB.userInfo.get(6)); // Latest customer_no + 1
-            ps.setString(2,JavaPB.userInfo.get(7));
-            ps.setString(3,JavaPB.userInfo.get(0)); // Latest account_no + 1
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
     }
 
     // A method that retrieves the latest job_id + 1
