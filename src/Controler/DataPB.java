@@ -70,10 +70,14 @@ public class DataPB {
     // A method that retrieves the latest job_id + 1
     // A method that retieves the latest account_no + 1
     // A method that retrieves the lastest customer_no + 1 
-    // A method that retrieves the users current customer_no
     // A method that retrieves the employees who are currently available
     // A method that retrieves the entire data of the job order from the data base. This takes in the job Id entered by the user.
-    // A method that compares the user typed username and password if there is a valid account with that.
+    // A method that retrieves the entire data of the job order from the data base that the em_id mathes with the current employee logged in.
+    /** A method that compares the user typed username and password if there is a valid account.
+    *    if valid and a customer then it retrieves the users current customer_no
+    *    if valid and a employee then it retrieves the users current employee_id
+    */
+    
     // A method that takes a service string and returns the respective service ID
     /** A method that if the account is a customer the details then get added to the userInfo arrayList
     *   userInfo = account_no(0), contact_no(1), email(2), password(3), address(4), account_type(5), customer_no(6), customer_name(7);
