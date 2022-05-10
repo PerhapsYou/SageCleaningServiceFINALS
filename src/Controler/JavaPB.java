@@ -14,7 +14,10 @@ public class JavaPB {
     public static ArrayList<String> data = new ArrayList<String>();
     // Holds the username(0) , password(1) , id/no(2) of the current logged in user
     public static ArrayList<String> loggedInUserDetails = new ArrayList<String>();
+    // This is used for the creation of a new job request
     public static ArrayList<String> orderInfo = new ArrayList<String>();
+    // This holds the job order details
+    public static ArrayList<String> jobOrder = new ArrayList<String>();
     public static Boolean loggedIn = false;
     
     public static void main(String[] args) {
