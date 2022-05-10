@@ -83,5 +83,7 @@ public class DataPB {
     /** A method that if the account is a customer the details then get added to the userInfo arrayList
     *   userInfo = account_no(0), contact_no(1), email(2), password(3), address(4), account_type(5), customer_no(6), customer_name(7);
     */
+    
+    // NOTE: You can add anything that you deem necessary but please add a comment as to what they do or is linked to
    
 }
