@@ -1,7 +1,11 @@
 package Controler;
 
+import Model.Account;
+import Model.Customer;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class DataPB {
     private static Connection con;
