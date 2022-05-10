@@ -76,6 +76,7 @@ public class DataPB {
     /** A method that compares the user typed username and password if there is a valid account.
     *    if valid and a customer then it retrieves the users current customer_no
     *    if valid and a employee then it retrieves the users current employee_id
+    *       the id/no will be added to loggedInUserDetails(2).
     */
     
     // A method that takes a service string and returns the respective service ID
