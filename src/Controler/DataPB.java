@@ -30,7 +30,7 @@ public class DataPB {
 
         try {
             ps = con.prepareStatement(statement);
-            ps.setString(1,JavaPB.userInfo.get(0));
+            ps.setString(1,JavaPB.userInfo.get(0)); // Latest account_no + 1
             ps.setString(2,JavaPB.userInfo.get(1));
             ps.setString(3,JavaPB.userInfo.get(2));
             ps.setString(4,JavaPB.userInfo.get(3));
@@ -48,9 +48,9 @@ public class DataPB {
 
         try {
             ps = con.prepareStatement(statement);
-            ps.setString(1,JavaPB.userInfo.get(6));
+            ps.setString(1,JavaPB.userInfo.get(6)); // Latest customer_no + 1
             ps.setString(2,JavaPB.userInfo.get(7));
-            ps.setString(3,JavaPB.userInfo.get(0));
+            ps.setString(3,JavaPB.userInfo.get(0)); // Latest account_no + 1
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
