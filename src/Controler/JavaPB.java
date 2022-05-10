@@ -10,7 +10,7 @@ public class JavaPB {
     // Set of arraylist...
     // userInfo holds the current users details
     public static ArrayList<String> userInfo = new ArrayList<String>();
-    // Data =  Holds other necessary details in job orders (service,location,sched,time,payment);
+    // Data =  Holds other necessary details in job orders (service,location,sched,time,payment) that was added by the user in the UI
     public static ArrayList<String> data = new ArrayList<String>();
     // Holds the username(0) , password(1) , id/no(2) of the current logged in user
     public static ArrayList<String> loggedInUserDetails = new ArrayList<String>();
