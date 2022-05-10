@@ -30,17 +30,17 @@ public class DataPB {
 
         try {
             ps = con.prepareStatement(statement);
-            ps.setString(1,JavaPB.userInfo.get(0)); // Latest account_no + 1
-            ps.setString(2,JavaPB.userInfo.get(1));
-            ps.setString(3,JavaPB.userInfo.get(2));
-            ps.setString(4,JavaPB.userInfo.get(3));
-            ps.setString(5,JavaPB.userInfo.get(4));
-            ps.setString(6,JavaPB.userInfo.get(5));
+            ps.setString(1,String.valueOf(newAcc.getAccountNo())); // Latest account_no + 1
+            ps.setString(2,String.valueOf(newAcc.getContactNo()));
+            ps.setString(3,newAcc.getEmail());
+            ps.setString(4,newAcc.getPassword());
+            ps.setString(5,newAcc.getAddress());
+            ps.setString(6,newAcc.getAccountType());
         }  catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
-    
+
     public static void addCustomer(Customer customerAcc){
         PreparedStatement ps;
         String statement = "INSERT INTO Customer(customer_no, customer_name, account_no)" +
@@ -48,37 +48,35 @@ public class DataPB {
 
         try {
             ps = con.prepareStatement(statement);
-            ps.setString(1,JavaPB.userInfo.get(6)); // Latest customer_no + 1
-            ps.setString(2,JavaPB.userInfo.get(7));
-            ps.setString(3,JavaPB.userInfo.get(0)); // Latest account_no + 1
+            ps.setString(1,String.valueOf(customerAcc.getId())); // Latest customer_no + 1
+            ps.setString(2,customerAcc.getName());
+            ps.setString(3,String.valueOf(customerAcc.getAccountNo())); // Latest account_no + 1
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
-    
-    public static void addJobOrder(Account newAcc){
+
+    public static void addJobOrder(JobOrder newJobOrder){
         PreparedStatement ps;
-        String statement = "INSERT INTO JOB_ORDERS(job_id, service_id, customer_id, date_of_order, scheduled_date, request_id" +
+        String statement = "INSERT INTO JOB_ORDERS(job_id, service_id, customer_id, date_of_order, scheduled_date," +
                 "clock_in, clock_out, total_hours, location, job_description, pay_status, job_status, em_id, b_id)"+
                 "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             ps = con.prepareStatement(statement);
-            ps.setString(1,JavaPB.orderInfo.get(0)); 
-            ps.setString(2,JavaPB.orderInfo.get(1));
-            ps.setString(3,JavaPB.orderInfo.get(2));
-            ps.setString(4,JavaPB.orderInfo.get(3));
-            ps.setString(5,JavaPB.orderInfo.get(4));
-            ps.setString(6,JavaPB.orderInfo.get(5));
-            ps.setString(7,JavaPB.orderInfo.get(6));
-            ps.setString(8,JavaPB.orderInfo.get(7));
-            ps.setString(9,JavaPB.orderInfo.get(8));
-            ps.setString(10,JavaPB.orderInfo.get(9));
-            ps.setString(11,JavaPB.orderInfo.get(10));
-            ps.setString(12,JavaPB.orderInfo.get(11));
-            ps.setString(13,JavaPB.orderInfo.get(12));
-            ps.setString(14,JavaPB.orderInfo.get(13));
-            ps.setString(15,JavaPB.orderInfo.get(14));
+            ps.setString(1, String.valueOf(newJobOrder.getId()));
+            ps.setString(2, String.valueOf(newJobOrder.getServiceID()));
+            ps.setString(3, String.valueOf(newJobOrder.getCustomerID()));
+            ps.setString(4, String.valueOf(newJobOrder.getDateOrdered()));
+            ps.setString(5, String.valueOf(newJobOrder.getScheduledDate()));
+            ps.setString(6,newJobOrder.getClockIn().toString());
+            ps.setString(7,newJobOrder.getClockOut().toString());
+            ps.setString(8,newJobOrder.getTotalHours().toString());
+            ps.setString(9,newJobOrder.getLocation());
+            ps.setString(10,newJobOrder.getDescription());
+            ps.setString(11,newJobOrder.getPaymentStatus());
+            ps.setString(12, String.valueOf(newJobOrder.getEmployeeID()));
+            ps.setString(13, String.valueOf(newJobOrder.getbID()));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
