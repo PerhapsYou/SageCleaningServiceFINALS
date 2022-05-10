@@ -65,10 +65,6 @@ public class ClientJobRequest {
         serviceRequestHeaderLabel.setBounds(215, 25, 278, 23);
         makeJobRequest.getContentPane().add(serviceRequestHeaderLabel);
 
-        JButton submitReqsB = new JButton("Make Request");
-        submitReqsB.setBounds(243, 241, 160, 24);
-        makeJobRequest.getContentPane().add(submitReqsB);
-
         JLabel serviceLabel = new JLabel("Service");
         serviceLabel.setFont(new Font("Corbel Light", Font.PLAIN, 13));
         serviceLabel.setBounds(263, 55, 52, 14);
@@ -156,6 +152,42 @@ public class ClientJobRequest {
         availWorkerComboBox.setBackground(Color.WHITE);
         availWorkerComboBox.setBounds(304, 185, 123, 22);
         makeJobRequest.getContentPane().add(availWorkerComboBox);
+        
+        JButton submitReqsB = new JButton("Make Request");
+        submitReqsB.setBounds(243, 241, 160, 24);
+        submitReqsB.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String service = serviceTextField.getText();
+                String location = locationTextField.getText();
+                String sched = schedDateTextField.getText();
+                String time = timeTextField.getText();
+                String payment = paymentRadioBtn.getSelection().toString();
+
+                if(emptyCheck(service)){
+                    JavaPB.data.add(service);
+                    if(emptyCheck(location)){
+                        JavaPB.data.add(location);
+                        if(emptyCheck(sched)){
+                            JavaPB.data.add(sched);
+                            if (emptyCheck(time)){
+                                JavaPB.data.add(time);
+                                if (emptyCheck(payment)){
+                                    JavaPB.data.add(payment);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if(JavaPB.data.size() < 5){
+                    System.out.println("There was an empty field.. please check any missing details");
+                    JavaPB.data.clear();
+                } else {
+                    System.out.println("Data was added successfully");
+                }
+            }
+        });
+        makeJobRequest.getContentPane().add(submitReqsB);
 
         JButton cancelReqB = new JButton("Cancel Request");
         cancelReqB.setBounds(452, 241, 160, 24);
