@@ -9,7 +9,7 @@ public class JobOrder {
     private int serviceID;
     private int customerID;
     private Date dateOrdered;
-    private int scheduledDateReqID;
+    private int scheduledDate;
     private Time clockIn;
     private Time clockOut;
     private Time totalHours;
@@ -32,7 +32,7 @@ public class JobOrder {
         this.serviceID = sID;
         this.customerID = cID;
         this.dateOrdered = dOrdered;
-        this.scheduledDateReqID = schedDate;
+        this.scheduledDate = schedDate;
         this.clockIn = cIn;
         this.clockOut = cOut;
         this.totalHours = totalHours;
@@ -76,12 +76,12 @@ public class JobOrder {
         this.dateOrdered = dateOrdered;
     }
 
-    public int getScheduledDateReqID() {
-        return scheduledDateReqID;
+    public int getScheduledDate() {
+        return scheduledDate;
     }
 
-    public void setScheduledDateReqID(int scheduledDateReqID) {
-        this.scheduledDateReqID = scheduledDateReqID;
+    public void setScheduledDate(int scheduledDate) {
+        this.scheduledDate = scheduledDate;
     }
 
     public Time getClockIn() {
