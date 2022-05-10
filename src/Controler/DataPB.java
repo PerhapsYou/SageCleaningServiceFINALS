@@ -60,7 +60,7 @@ public class DataPB {
         PreparedStatement ps;
         String statement = "INSERT INTO JOB_ORDERS(job_id, service_id, customer_id, date_of_order, scheduled_date," +
                 "clock_in, clock_out, total_hours, location, job_description, pay_status, job_status, em_id, b_id)"+
-                "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                "VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             ps = con.prepareStatement(statement);
